@@ -632,8 +632,14 @@
     </style>
 </head>
 <body>
-    <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+    <button id="playMusicBtn" 
+style="position:fixed;top:20px;right:20px;padding:10px 20px;
+background:#ff1744;color:white;border:none;border-radius:20px;">
+🎵 Play Music
+</button>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
     <!-- PAGE 1: Initial Message -->
     <div class="page page-1 active" id="page1">
@@ -1182,15 +1188,9 @@
                 }, i * 100);
             }
         }
-        window.addEventListener("load", function () {
+document.getElementById("playMusicBtn").addEventListener("click", function () {
     const music = document.getElementById("bgMusic");
-
-    function startMusic() {
-        music.play().catch(() => {});
-        document.removeEventListener("click", startMusic);
-    }
-
-    document.addEventListener("click", startMusic);
+    music.play();
 });
     </script>
 </body>
