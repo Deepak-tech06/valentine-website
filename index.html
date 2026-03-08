@@ -1189,7 +1189,12 @@ background:#ff1744;color:white;border:none;border-radius:20px;">
         }
 document.getElementById("playMusicBtn").addEventListener("click", function () {
     const music = document.getElementById("bgMusic");
-    music.play();
+    
+    music.play().then(() => {
+        console.log("Music started");
+    }).catch(err => {
+        console.error("Music failed:", err);
+    });
 });
     </script>
 </body>
