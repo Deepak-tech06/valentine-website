@@ -632,6 +632,9 @@
     </style>
 </head>
 <body>
+    <audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
     <!-- PAGE 1: Initial Message -->
     <div class="page page-1 active" id="page1">
         <div class="intro-text">
@@ -1179,6 +1182,16 @@
                 }, i * 100);
             }
         }
+        window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+
+    function startMusic() {
+        music.play().catch(() => {});
+        document.removeEventListener("click", startMusic);
+    }
+
+    document.addEventListener("click", startMusic);
+});
     </script>
 </body>
 </html>
