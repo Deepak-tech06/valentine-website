@@ -31,7 +31,7 @@
 # 📸 Preview
 
 <p align="center">
-  <img src="./preview.png" width="100%" alt="Valentine Website Preview"/>
+  <img src="./image.png" width="100%" alt="Valentine Website Preview"/>
 </p>
 
 ---
